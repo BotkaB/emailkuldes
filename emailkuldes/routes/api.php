@@ -14,11 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use App\Http\Controllers\MailController;
 
-Route::get('send_mail', [MailController::class, 'index']);
+
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+

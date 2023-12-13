@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\FileController;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('send_mail', [MailController::class, 'index']);
+
+Route::get('file_upload', [FileController::class, 'index']);
+Route::post('file_upload', [FileController::class, 'store'])->name('file.store');
